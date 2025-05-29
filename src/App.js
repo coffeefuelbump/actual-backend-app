@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './unAuth/HomePage';
 import SignPage from './unAuth/SignPage';
 import Dashboard from './Auth/Dashboard';
+import Profile from './unauth/Profile';
 import { AuthProvider, useAuth } from './AuthContext';
 import './firebase';
 import { Helmet } from 'react-helmet';
