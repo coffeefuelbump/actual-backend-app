@@ -1,18 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
-import HomePage from './unAuth/HomePage';
-import SignPage from './unAuth/SignPage';
-import Dashboard from './Auth/Dashboard';
-import { AuthProvider, useAuth } from './AuthContext';
-import './firebase';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import "./App.css";
+import HomePage from "./unAuth/HomePage";
+import SignPage from "./unAuth/SignPage";
+import Dashboard from "./Auth/Dashboard";
+import { AuthProvider, useAuth } from "./AuthContext";
+import "./firebase";
+import { Helmet } from "react-helmet";
 
 const REACT_APP_GA4_MEASUREMENT_ID = process.env.REACT_APP_GA4_MEASUREMENT_ID;
 
+// Test 123
+
 const PrivateRoute = ({ children }) => {
   const { currentUser, loading } = useAuth();
-  
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -41,7 +48,7 @@ function App() {
                     send_page_view: false,
                   });
                 `}
-              </script>
+              </script>,
             ]}
           </Helmet>
           <Routes>
