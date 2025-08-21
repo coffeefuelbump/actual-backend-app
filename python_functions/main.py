@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import stripe
 import os
 import requests
+import pandas as pd
 
 # Load environment variables from .env file
 load_dotenv()
