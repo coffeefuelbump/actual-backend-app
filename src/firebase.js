@@ -35,7 +35,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// Analytics only works with a real measurementId and a production Firebase
+// project. Initializing it in development (e.g. against the emulators) throws,
+// so only enable it when a measurementId is configured outside development.
+let analytics = null;
+if (process.env.NODE_ENV !== 'development' && firebaseConfig.measurementId) {
+  analytics = getAnalytics(app);
+}
 const storage = getStorage(app);
 // Initialize Firebase services
 const auth = getAuth(app);
