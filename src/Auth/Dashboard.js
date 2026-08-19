@@ -23,7 +23,6 @@ const Dashboard = () => {
     profileImage: '',
     userEmail: '',
   });
-  const [quote, setQuote] = useState(null);
   const [prompts, setPrompts] = useState([]); // State for prompts array
   const [AIResponses, setAIResponses] = useState([]); // State for AI responses array
   const [loading, setLoading] = useState(true); // For loading state
@@ -105,21 +104,8 @@ const Dashboard = () => {
       }
     };
 
-    const selectRandomQuote = () => {
-      const allQuotes = [
-        "The greatest glory in living lies not in never falling, but in rising every time we fall. — Nelson Mandela",
-        "The way to get started is to quit talking and begin doing. — Walt Disney",
-        "Your time is limited, so don't waste it living someone else's life. — Steve Jobs",
-        // Add more quotes as desired
-      ];
-
-      const randomIndex = Math.floor(Math.random() * allQuotes.length);
-      setQuote(allQuotes[randomIndex]);
-    };
-
     const fetchData = async () => {
       await fetchUserProfile();
-      selectRandomQuote();
       setLoading(false);
     };
 

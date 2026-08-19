@@ -1,8 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./firebase', () => ({
+  auth: {},
+  db: {},
+  functions: {},
+  storage: {},
+  doc: jest.fn(),
+  getDoc: jest.fn(),
+  signOut: jest.fn(),
+  googleProvider: {},
+  signInWithRedirect: jest.fn(),
+  sendSignInLinkToEmail: jest.fn(),
+  isSignInWithEmailLink: jest.fn(() => false),
+  signInWithEmailLink: jest.fn(),
+  getRedirectResult: jest.fn(() => Promise.resolve(null)),
+}));
+
+jest.mock('./AuthContext', () => ({
+  AuthProvider: ({ children }) => children,
+  useAuth: () => ({ currentUser: null, loading: false }),
+}));
+
+test('renders the unauthenticated home page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', {
+      name: /actually build backend apps using ai/i,
+    })
+  ).toBeInTheDocument();
 });

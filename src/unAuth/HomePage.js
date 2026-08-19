@@ -15,8 +15,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(fab, faRobot, faDatabase, faMagic, faCode, faMobileAlt);
 
 const HomePage = () => {
-  // State for carousel
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [activeNav, setActiveNav] = useState('home');
 
   useEffect(() => {
@@ -69,16 +67,6 @@ const HomePage = () => {
       videoId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
     },
   ];
-
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => {
-      clearInterval(slideInterval);
-    };
-  }, [slides.length]);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);

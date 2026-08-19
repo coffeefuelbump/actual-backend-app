@@ -7,7 +7,7 @@ certifi==2026.7.22
 cffi==2.1.1
 charset-normalizer==3.5.1
 click==8.4.2
-cloudevents==2.2.0
+cloudevents==1.12.0
 cryptography==50.0.0
 deprecation==2.1.0
 distro==1.9.0
@@ -24,7 +24,7 @@ google-cloud-core==2.6.1
 google-cloud-firestore==2.28.1
 google-cloud-storage==3.13.1
 google-crc32c==1.8.0
-google-events==0.14.0
+google-events==0.5.0
 google-resumable-media==2.10.1
 googleapis-common-protos==1.75.1
 grpcio==1.83.0
@@ -48,7 +48,7 @@ pyasn1==0.6.4
 pyasn1_modules==0.4.2
 pycparser==3.0
 pydantic==2.13.4
-pydantic_core==2.48.0
+pydantic_core==2.46.4
 PyJWT==2.13.0
 pyparsing==3.3.2
 PyYAML==6.0.3
